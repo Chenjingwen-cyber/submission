@@ -1,27 +1,4 @@
 # -*- coding: utf-8 -*-
-"""candidate_nodes.py
-
-Paper-oriented candidate DAG construction for depth-constrained XOR2/XOR3
-linear-layer synthesis.
-
-This file implements two Strategys:
-
-Strategy 1: GDA-Seed
-    Global Depth-Aware LCB-BP Seed DAG.
-    The LCB-BP traces are used only as candidate-discovery devices, not as
-    fixed schedules.  Candidate producers are merged first, and depth feasibility
-    is then recomputed globally over the merged DAG.
-
-Strategy 2: SRTC
-    Seed-DAG-Guided Shared Residual Terminal Completion.
-    This Strategy extends a finished seed DAG without re-running LCB-BP.  It extracts
-    a depth-aware parent pool from the seed DAG, constructs residual bridges from
-    that pool, and admits only bridges that support at least two output targets.
-
-The method is intentionally budget-free: no top-K terminal budget and no
-per-target truncation are used in the SRTC Strategy.  The only structural control is
-shared residual support.
-"""
 
 from __future__ import annotations
 
