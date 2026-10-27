@@ -1,21 +1,4 @@
 # -*- coding: utf-8 -*-
-"""run_compare.py
-
-Final-experiment runner for the two-Strategy candidate-flow:
-  Strategy1: GDA-Seed candidate DAG + layered MILP
-  Strategy2: TD-OTD extension of the same seed DAG + layered MILP
-
-This file only changes the experiment output organization.  Candidate generation
-is delegated to candidate_nodes.py, and the MILP model is delegated to
-milp_model.py.
-
-For each matrix/depth/seed/num-runs configuration, each Strategy writes only two
-files:
-  *_Strategy1_circuit.txt / *_Strategy1_result.txt
-  *_Strategy2_W{W}_circuit.txt / *_Strategy2_W{W}_result.txt
-
-A compact summary_all.csv is appended in --output-dir for cross-run comparison.
-"""
 
 from __future__ import annotations
 
